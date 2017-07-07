@@ -4,6 +4,7 @@ import (
 	"crypto/rand"
 	"encoding/hex"
 	"fmt"
+	"log"
 	"net/http"
 	"time"
 )
@@ -14,6 +15,7 @@ var (
 
 func main() {
 	http.HandleFunc("/", serve)
+	log.Println("Starting service on port 9000")
 	http.ListenAndServe(":9000", nil)
 }
 
