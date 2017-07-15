@@ -9,6 +9,7 @@ image_resource:
 
 inputs:
 - name: http-hello-world
+- name: version
 
 outputs:
 - name: out
@@ -18,6 +19,7 @@ run:
   args:
     - -c
     - |
+      find .
       export GOPATH=$PWD
       cd http-hello-world
       go build -o ../out/http-hello-world
