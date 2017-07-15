@@ -19,8 +19,7 @@ run:
   args:
     - -c
     - |
-      cat version/version
-      cat version/number
+      v=$(cat version/number)
       export GOPATH=$PWD
       cd http-hello-world
-      go build -o ../out/http-hello-world
+      go build -o ../out/http-hello-world-$v
