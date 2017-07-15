@@ -1,0 +1,24 @@
+
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: sam701/golang-and-dependencies
+
+inputs:
+- name: http-hello-world
+
+outputs:
+- name: out
+
+run:
+  path: sh
+  args:
+    - -c
+    - |
+      export GOPATH=$PWD
+      cd http-hello-world
+      go build -o ../out/http-hello-world
+      find ..
